@@ -11,7 +11,7 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/D100")
+@app.route("/d100")
 def d100():
     return render_template("d100.html", d=d)
 
