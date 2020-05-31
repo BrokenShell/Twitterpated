@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="contact">
+<div class="box">
+	<h1>Relative Gamma <span class="symbol">&gamma;</span></h1>
+	<h3>Time Dilation Due to Relative Speed Difference</h3>
+	<p>Speed: <select id="speed">
+	<option value="0">Standing Still</option>
+	<option value="3.12928">Running: 7mph</option>
+	<option value="8.9408">Bicycle: 20mph</option>
+	<option value="26.8224">Car: 60mph</option>
+	<option value="89.408">Nascar: 200mph</option>
+	<option value="257.048">Typical Jet: 575mph</option>
+	<option value="340.29">Speed of Sound: 768mph</option>
+	<option value="447.04">Spin of the Earth 1000mph</option>
+	<option value="980.448128">SR-71 Blackbird: 2,193mph</option>
+	<option value="7823.2">Satellite in Orbit: 17,500mph</option>
+	<option value="29951.68">Earth's Orbit 67,000mph</option>
+	<option value="33528">Mars Pathfinder 75,000mph</option>
+	<option value="40233.6">Milky Way 25mps</option>
+	<option value="225308.16">Solar System 140mps</option>
+	<option value="603504">Local Group 375mps</option>
+	<option value="2997924.58">1% Speed of Light</option>
+	<option value="29979245.8">10% Speed of Light</option>
+	<option value="149896229">50% Speed of Light</option>
+	<option value="269813212.2">90% Speed of Light</option>
+	<option value="299792457.99999997">Near the Speed of Light (C - 0.00000003 m/s)</option>
+	<option value="299792458">The Speed of Light</option>
+	</select>
+	<p id="dilation"></p>
+</div>
+<script type="text/javascript">
+var time = {
+	C: 299792458,
+	gamma: function (speed) {
+		var delta = Math.sqrt(1 - Math.pow(speed, 2) / Math.pow(time.C, 2));
+		return 1 / delta;
+	},
+	flux: function (speed) {
+		return 'Time Dilation = 1:' + time.gamma(speed);
+	}
+}
+
+function fluxInit(firstRun) {
+	var mySpeed = document.getElementById("speed");
+	if (firstRun === true) {
+		mySpeed.addEventListener("change", fluxInit);
+	}
+	document.getElementById("dilation").innerHTML = time.flux(mySpeed.value);
+}
+fluxInit(true);
+</script>
+</div>
+{% endblock %}
