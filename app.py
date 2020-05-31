@@ -11,14 +11,14 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/about")
-def about():
-    return render_template("about.html", d=d)
+@app.route("/D100")
+def d100():
+    return render_template("d100.html", d=d)
 
 
-@app.route("/contact")
-def contact():
-    return render_template("contact.html")
+@app.route("/gamma")
+def gamma():
+    return render_template("gamma.html")
 
 
 if __name__ == '__main__':

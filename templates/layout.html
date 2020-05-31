@@ -5,7 +5,7 @@
     <link rel="stylesheet"
           href="{{ url_for('static', filename='css/reset.css') }}">
     <link rel="stylesheet"
-          href="{{ url_for('static', filename='css/style.css') }}">
+          href="static/css/style.css">
     <link rel="icon"
           type="image/png"
           href="{{ url_for('static', filename='images/dice.ico') }}">
@@ -18,8 +18,8 @@
     <nav>
         <ul>
             <li><a href="{{ url_for('index') }}">HOME</a></li>
-            <li><a href="{{ url_for('about') }}">ABOUT</a></li>
-            <li><a href="{{ url_for('contact') }}">CONTACT</a></li>
+            <li><a href="{{ url_for('d100') }}">D100</a></li>
+            <li><a href="{{ url_for('gamma') }}">Gamma</a></li>
         </ul>
     </nav>
     <div class="container">

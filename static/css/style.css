@@ -45,11 +45,12 @@ nav a:hover {
 h1, h2, h3, h4, h5 {
     margin: 40px 100px;
     font-family: Monaco;
-    color: #cca76e;
+    color: #eeeeee;
 }
 h1 {
     margin: 40px 60px;
     font-size: 2em;
+    color: #cca76e;
 }
 h2 {
     font-size: 1.8em;
